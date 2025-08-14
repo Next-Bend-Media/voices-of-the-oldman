@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voices of the Oldman</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+<!-- BG Video -->
+  <video autoplay muted loop playsinline id="heroVideo">
+    <source src="assets/videos/overview.mp4" type="video/mp4"/>
+  </video>
+  
+<!-- Header -->  
+<div class="header-row">
+  <div class="logo-container">
+    <img src="assets/svgs/logo-white.svg" alt="Voices of the Oldman Logo" class="logo"/>
+  </div>
+</div>
+
+<!-- Mobile Header -->
+<div class="header-row-mobile">
+  <div class="logo-container-mobile">
+    <img src="assets/svgs/logo-white.svg" alt="Voices of the Oldman Logo"/>
+  </div>
+</div>
+
+<!-- Audio Button -->
+<button id="audioButton" class="audio-button"></button>
+
+<!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> <a href="https://nextbend.ca/">Next Bend Media</a></p>
+  </footer>
+
+  <!-- River Navigation -->
+  <div id="riverNav"></div>
+<script>
+  fetch('assets/svgs/old-man-river-black.svg')
+    .then(r => r.text())
+    .then(svg => { document.getElementById('riverNav').innerHTML = svg; });
+</script>
+</body>
+</html>

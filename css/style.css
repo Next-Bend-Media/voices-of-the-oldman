@@ -1,0 +1,315 @@
+/* ======================================= */
+/* Global Styles                           */
+/* ======================================= */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'EldersTypeFace' sans-serif;
+  overflow: hidden;
+}
+
+/* ======================================= */
+/* Fonts                                   */
+/* ======================================= */
+
+@font-face {
+  font-family: 'Revans';
+  src: url('../assets/fonts/Revans/Revans-Normal.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Revans';
+  src: url('../assets/fonts/Revans/Revans-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Revans';
+  src: url('../assets/fonts/Revans/Revans-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Revans';
+  src: url('../assets/fonts/Revans/Revans-Light Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Revans';
+  src: url('../assets/fonts/Revans/Revans-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Revans';
+  src: url('../assets/fonts/Revans/Revans-Medium Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Revans';
+  src: url('../assets/fonts/Revans/Revans-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Revans';
+  src: url('../assets/fonts/Revans/Revans-Bold Italic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Revans';
+  src: url('../assets/fonts/Revans/Revans-SemiBold Italic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'EldersTypeface';
+  src: url('../assets/fonts/EldersTypeface.otf') format('opentype');
+  font-weight: auto;
+  font-style: normal;
+}
+
+/* ========================== */
+/* Utility Font Classes */
+/* ========================== */
+
+.revans-normal { font-family: 'Revans'; font-weight: 400; font-style: normal; }
+.revans-italic { font-family: 'Revans'; font-weight: 400; font-style: italic; }
+
+.revans-light { font-family: 'Revans'; font-weight: 300; font-style: normal; }
+.revans-light-italic { font-family: 'Revans'; font-weight: 300; font-style: italic; }
+
+.revans-medium { font-family: 'Revans'; font-weight: 500; font-style: normal; }
+.revans-medium-italic { font-family: 'Revans'; font-weight: 500; font-style: italic; }
+
+.revans-bold { font-family: 'Revans'; font-weight: 700; font-style: normal; }
+.revans-bold-italic { font-family: 'Revans'; font-weight: 700; font-style: italic; }
+
+.revans-semibold-italic { font-family: 'Revans'; font-weight: 600; font-style: italic; }
+
+.elders-typeface { font-family: 'EldersTypeface'; font-weight: auto; font-style: normal;}
+
+/* ======================================= */
+/* Hero Video Background                   */
+/* ======================================= */
+video#heroVideo {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+/* ======================================= */
+/* Navigation                              */
+/* ======================================= */
+
+#riverNav {
+  position: fixed;
+  top: 0;
+  bottom: 0; 
+  width: 30vh;
+  height: auto;
+  z-index: 10;
+  transform: scale(1.1);
+  transform-origin: center;
+}
+
+#riverNav svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#riverNav path {
+  stroke-width: 4;
+  fill: none;
+  opacity: 0.5;
+}
+
+#riverNav circle {
+  stroke-width: 2;
+}
+
+/* ======================================= */
+/* Audio Toggle                            */
+/* ======================================= */
+.audio-button {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: black;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 20;
+}
+
+/* Clicked state */
+.audio-button.clicked {
+  background: red; /* change shape/color when clicked */
+  border-radius: 8px; /* example: turn into square */
+}
+
+/* Mobile ≤ 550px: move to top right */
+@media (max-width: 550px) {
+  .audio-button {
+    top: 1rem;
+    bottom: auto;
+    right: 1rem;
+  }
+}
+
+/* ======================================= */
+/* Hero Overlay                            */
+/* ======================================= */
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+/* ======================================= */
+/* Header & Nav                            */
+/* ======================================= */
+
+.header-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  gap: 1rem;
+}
+
+.nav-column {
+  background: rgba(255, 255, 255, 0.2);
+  color: black;
+  padding: 1rem;
+  border-radius: 4px;
+  z-index: 999;
+}
+
+/* ======================================= */
+/* Logo                                    */
+/* ======================================= */
+
+.logo-container {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+@media (max-width: 550px) {
+  .logo-container {
+    display: none;
+  }
+}
+
+.logo {
+  position: relative;
+  width: 50vw;
+  max-width: 300px;
+  min-width: 180px;
+  opacity: 1;
+  background-image: url('/assets/images/paper-texture.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 0 0 0 20px;
+}
+
+/* ======================================= */
+/* Header Mobile                           */
+/* ======================================= */
+
+@media (max-width: 550px) {
+  .header-row-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  }
+}
+
+@media (max-width: 550px) {
+  .header-row-mobile {
+    display: block;
+    position: fixed;
+    left: 50%;
+    bottom: 4vh;
+    transform: translateX(-50%);
+    z-index: 12;
+    text-align: center;
+  }
+
+/* ======================================= */
+/* Logo Mobile                             */
+/* ======================================= */
+  .logo-container-mobile {
+    width: 100vw;
+    max-width: 260px;
+    min-width: 250px;
+  }
+}
+
+/* ======================================= */
+/* Footer                                  */
+/* ======================================= */
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  width: 100%;
+  height: 2vh;
+  background: #ebc088cc;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  text-decoration: none;
+  font-family: EldersTypeface, sans-serif;
+}
+
+.site-footer a {
+  color: white;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: #f0f0f0;
+  text-decoration: underline;
+  transition: color 200ms ease-in-out;
+}
